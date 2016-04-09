@@ -1,0 +1,10 @@
+{
+    "name":         "opensimplex",
+    "url":          "https://github.com/sepharoth213/opensimplex-hx",
+    "license":      "BSD",
+    "tags":         ["cross", "game"],
+    "description":  "opensimplex",
+    "version":      "0.0.0",
+    "releasenote":  "initial commit",
+    "contributors": ["aaron"]
+}
