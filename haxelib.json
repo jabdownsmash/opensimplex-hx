@@ -3,8 +3,8 @@
     "url":          "https://github.com/sepharoth213/opensimplex-hx",
     "license":      "BSD",
     "tags":         ["cross", "game"],
-    "description":  "opensimplex",
+    "description":  "A port of Kurt Spencer's Java implementation of OpenSimplex noise to Haxe",
     "version":      "0.0.0",
-    "releasenote":  "initial commit",
+    "releasenote":  "initial commits",
     "contributors": ["aaron"]
 }

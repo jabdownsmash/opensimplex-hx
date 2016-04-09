@@ -1,12 +1,7 @@
-# fluidity-hx
+# opensimplex-hx
 
-Fluidity is a new approach to game development that uses [evsm](https://github.com/sepharoth213/evsm-hx) to provide a state-machine based framework.
-
-Check out the wiki: https://github.com/sepharoth213/fluidity-hx/wiki
-
-Documentation is currently being developed, and can be viewed here: http://sepharoth213.github.io/fluidity-hx/
+Kurt Spencer's Java OpenSimplex implementation: https://gist.github.com/KdotJPG/b1270127455a94ac5d19
 
 To install, run:
 
-    git clone https://github.com/sepharoth213/fluidity-hx
-    haxelib dev fluidity fluidity-hx
+    haxelib git opensimplex https://github.com/sepharoth213/opensimplex-hx
