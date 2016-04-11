@@ -57,13 +57,13 @@ class OpenSimplexNoise {
         {
             source.push(i);
         }
-        seed = seed * 6364136223846793005 + 1442695040888963407;
-        seed = seed * 6364136223846793005 + 1442695040888963407;
-        seed = seed * 6364136223846793005 + 1442695040888963407;
+        seed = seed * 636413622 + 14426950;
+        seed = seed * 636413622 + 14426950;
+        seed = seed * 636413622 + 14426950;
         var i = 255;
         while(i >= 0)
         {
-            seed = seed * 6364136223846793005 + 1442695040888963407;
+            seed = seed * 636413622 + 14426950;
             var r:Int = ((seed + 31) % (i + 1));
             if (r < 0)
                 r += (i + 1);
@@ -106,6 +106,7 @@ class OpenSimplexNoise {
         var dx_ext:Float = 0;
         var dy_ext:Float = 0;
         var xsv_ext:Int = 0;
+        var ysv_ext:Int = 0;
         var sv_ext:Int = 0;
         
         var value:Float = 0;
@@ -2073,22 +2074,22 @@ class OpenSimplexNoise {
             + gradients2D[index + 1] * dy;
     }
     
-    private function extrapolate(xsb:Int, ysb:Int, zsb:Int, dx:Float, dy:Float, dz:Float):Float
-    {
-        var index:Int = permGradIndex3D[(perm[(perm[xsb & 0xFF] + ysb) & 0xFF] + zsb) & 0xFF];
-        return gradients3D[index] * dx
-            + gradients3D[index + 1] * dy
-            + gradients3D[index + 2] * dz;
-    }
+    // private function extrapolate(xsb:Int, ysb:Int, zsb:Int, dx:Float, dy:Float, dz:Float):Float
+    // {
+    //     var index:Int = permGradIndex3D[(perm[(perm[xsb & 0xFF] + ysb) & 0xFF] + zsb) & 0xFF];
+    //     return gradients3D[index] * dx
+    //         + gradients3D[index + 1] * dy
+    //         + gradients3D[index + 2] * dz;
+    // }
     
-    private function extrapolate(xsb:Int, ysb:Int, zsb:Int, wsb:Int, dx:Float, dy:Float, dz:Float, dw:Float):Float
-    {
-        var index:Int = perm[(perm[(perm[(perm[xsb & 0xFF] + ysb) & 0xFF] + zsb) & 0xFF] + wsb) & 0xFF] & 0xFC;
-        return gradients4D[index] * dx
-            + gradients4D[index + 1] * dy
-            + gradients4D[index + 2] * dz
-            + gradients4D[index + 3] * dw;
-    }
+    // private function extrapolate(xsb:Int, ysb:Int, zsb:Int, wsb:Int, dx:Float, dy:Float, dz:Float, dw:Float):Float
+    // {
+    //     var index:Int = perm[(perm[(perm[(perm[xsb & 0xFF] + ysb) & 0xFF] + zsb) & 0xFF] + wsb) & 0xFF] & 0xFC;
+    //     return gradients4D[index] * dx
+    //         + gradients4D[index + 1] * dy
+    //         + gradients4D[index + 2] * dz
+    //         + gradients4D[index + 3] * dw;
+    // }
     
     private static function fastFloor(x:Float):Int
     {
